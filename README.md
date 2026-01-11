@@ -165,23 +165,14 @@ These queries helped extract business insights directly from the transactional d
         GROUP BY pizza_name
         ORDER BY Total_Revenue DESC;
 
-- **Top 5 Pizzas by Revenue**
+- **Bottom 5 Pizzas by Revenue**
 
         SELECT TOP 5
             pizza_name,
             CAST(SUM(total_price) AS DECIMAL(10,2)) AS Total_Revenue
         FROM pizza_sales
         GROUP BY pizza_name
-        ORDER BY Total_Revenue DESC;
-
-- **Top 5 Pizzas by Quantity Sold**
-
-        SELECT TOP 5
-            pizza_name,
-            SUM(quantity) AS Total_Pizzas_Sold
-        FROM pizza_sales
-        GROUP BY pizza_name
-        ORDER BY Total_Pizzas_Sold DESC;
+        ORDER BY Total_Revenue ASC;
 
 - **Top 5 Pizzas by Quantity Sold**
 
